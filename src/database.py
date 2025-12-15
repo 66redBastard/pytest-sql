@@ -7,7 +7,6 @@ load_dotenv()
 
 
 def get_connection():
-    """Створює нове з'єднання з базою даних"""
     return psycopg2.connect(
         dbname=os.getenv("DB_NAME"),
         user=os.getenv("DB_USER"),
