@@ -34,3 +34,16 @@ def get_connection():
     except Exception as exc:
         log_database_connection_failure(db_name, user, host, port, str(exc))
         return None
+
+
+def init_database():
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    with open("sql/schema.sql", "r") as f:
+        schema = f.read()
+
+    cursor.execute(schema)
+    conn.commit()
+    cursor.close()
+    conn.close()
