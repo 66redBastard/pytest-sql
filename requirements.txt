@@ -2,3 +2,5 @@ pytest==8.3.4
 python-dotenv==1.0.1
 psycopg2-binary==2.9.11
 sqlalchemy==2.0.36
+colorama==0.4.6
+requests==2.32.5
