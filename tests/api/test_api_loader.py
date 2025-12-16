@@ -11,3 +11,7 @@ def test_load_picachu():
     assert result["height"] == 4
     assert result["weight"] == 60
     assert result["base_experience"] == 112
+    assert result["hp"] == 35
+    assert result["hp_effort"] == 0
+    assert result["attack"] == 55
+    assert result["attack_effort"] == 0

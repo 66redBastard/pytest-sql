@@ -40,6 +40,10 @@ def log_database_connection_failure(db_name, error):
     )
 
 
+def log_error_insertion(exc):
+    logger.error(f"{Fore.RED}Error inserting data: {exc}{Style.RESET_ALL}")
+
+
 def log_database_disconnection(db_name):
     logger.info(f"{Fore.CYAN}Disconnected from database '{db_name}'{Style.RESET_ALL}")
 

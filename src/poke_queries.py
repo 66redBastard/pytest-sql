@@ -1,6 +1,12 @@
 INSERT_POKEMON = """
-    INSERT INTO pokemon (name, height, weight, base_experience)
-    VALUES (%s, %s, %s, %s)
+    INSERT INTO pokemon (api_id, name, height, weight, base_experience,
+        hp, hp_effort,
+        attack, attack_effort,
+        defense, defense_effort,
+        special_attack, special_attack_effort,
+        special_defense, special_defense_effort,
+        speed, speed_effort)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     RETURNING id;
 """
 
