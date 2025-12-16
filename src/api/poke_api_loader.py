@@ -22,15 +22,15 @@ def load_pokemon_from_api(pokemon_name):
             "special-defense",
             "speed",
         ]
+        all_stats = data.get("stats")
         stats_dict = {}
 
         for stat_name in stat_names:
-            stat = next(
-                (s for s in data["stats"] if s["stat"]["name"] == stat_name), None
-            )
+            stat = next((s for s in all_stats if s["stat"]["name"] == stat_name), None)
             if stat:
-                stats_dict[stat_name.replace("-", "_")] = stat["base_stat"]
-                stats_dict[f"{stat_name.replace('-', '_')}_effort"] = stat["effort"]
+                key = stat_name.replace("-", "_")
+                stats_dict[key] = stat["base_stat"]
+                stats_dict[f"{key}_effort"] = stat["effort"]
 
         conn = get_connection()
         cursor = conn.cursor()
